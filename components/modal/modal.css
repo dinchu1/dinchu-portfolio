@@ -1,0 +1,228 @@
+/* ==========================================================================
+   MODAL
+   Hidden by default (display: none via lack of .modal--open). Backdrop
+   + centered panel, both fade/scale in together when opened.
+   ========================================================================== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+.modal--open {
+  display: flex;
+}
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  animation: modal-backdrop-fade-in var(--transition-base) ease forwards;
+}
+
+.modal__panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 640px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-modal);
+  animation: modal-panel-in var(--transition-base) ease forwards;
+}
+
+@keyframes modal-backdrop-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-panel-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ---------- Close button ---------- */
+
+.modal__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xl);
+  line-height: 1;
+  color: var(--color-text);
+  background-color: rgba(10, 10, 10, 0.6);
+  border-radius: 50%;
+  transition: background-color var(--transition-fast);
+}
+
+.modal__close:hover {
+  background-color: rgba(10, 10, 10, 0.9);
+}
+
+/* ---------- Media ---------- */
+
+.modal__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.modal__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal__match {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-match);
+  background-color: rgba(10, 10, 10, 0.85);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Body ---------- */
+
+.modal__body {
+  padding: var(--space-lg);
+}
+
+.modal__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  margin-bottom: var(--space-md);
+}
+
+.modal__detail {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ---------- Optional "Visit Project" link ---------- */
+/* Hidden by default (see modal.html) — only shown when a card's data
+   includes a "link" field. */
+
+.modal__cta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--space-lg);
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.modal__cta:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* FIX: .modal__cta's own "display: inline-flex" above ties in CSS
+   specificity with the browser's built-in [hidden] { display: none }
+   rule, and author styles win that tie — meaning the hidden attribute
+   was being silently ignored, showing the button on every card even
+   when JS correctly set hidden = true. This rule is more specific
+   than the .modal__cta selector alone, so it wins instead. */
+.modal__cta[hidden] {
+  display: none;
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .modal__backdrop,
+  .modal__panel {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   LAUNCH TRANSITION
+   Full-screen overlay used when launching into the space universe
+   (see modal.js's playLaunchTransition). Built dynamically via JS
+   rather than living in modal.html, since it's a one-off, not part
+   of the modal itself.
+   ========================================================================== */
+
+.launch-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #060818; /* dark navy, matches the space scene */
+  opacity: 0;
+  transition: opacity 400ms ease;
+  pointer-events: none;
+}
+
+.launch-overlay--active {
+  opacity: 1;
+}
+
+.launch-overlay__rocket {
+  font-size: 4rem;
+  transform: translateY(200px) rotate(0deg);
+  opacity: 0;
+}
+
+.launch-overlay--active .launch-overlay__rocket {
+  animation: rocket-launch 1000ms cubic-bezier(0.4, 0, 0.2, 1) 300ms forwards;
+}
+
+@keyframes rocket-launch {
+  0% {
+    transform: translateY(200px) rotate(-8deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(180px) rotate(4deg);
+  }
+  40% {
+    transform: translateY(60px) rotate(-6deg);
+  }
+  100% {
+    transform: translateY(-500px) rotate(2deg);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .launch-overlay__rocket {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

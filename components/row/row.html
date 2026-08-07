@@ -1,0 +1,20 @@
+<!--
+  Row template. Like card.html, this is a <template> cloned once per
+  row (Skills, Projects, Experience, etc.) by row.js — not rendered
+  directly. `section id` becomes the navbar anchor target, so it must
+  match the `data-nav` values in navbar.html (home, professional,
+  skills, projects, contact).
+-->
+<template id="row-template">
+  <section class="row">
+    <h2 class="row__title"></h2>
+
+    <div class="row__wrapper">
+      <button class="row__scroll-btn row__scroll-btn--prev" aria-label="Scroll left">‹</button>
+
+      <div class="row-track"></div>
+
+      <button class="row__scroll-btn row__scroll-btn--next" aria-label="Scroll right">›</button>
+    </div>
+  </section>
+</template>

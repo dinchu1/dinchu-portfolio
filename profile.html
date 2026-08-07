@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dinchen Lepcha</title>
+    <meta
+      name="description"
+      content="Dinchen Lepcha — MIS Analyst & Data Analyst. A Netflix-style interactive portfolio."
+    />
+
+    <!-- Open Graph / LinkedIn / Facebook link previews -->
+    <meta property="og:title" content="Dinchen Lepcha — Portfolio" />
+    <meta
+      property="og:description"
+      content="A Netflix-style interactive portfolio. Pick a profile — Recruiter, Developer, Stalker, or Adventurer — and see a different side of the story."
+    />
+    <meta
+      property="og:image"
+      content="https://dinchu.com/assets/images/og-image.jpg"
+    />
+    <meta property="og:url" content="https://dinchu.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card (falls back to OG tags above if omitted, but explicit is safer) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dinchen Lepcha — Portfolio" />
+    <meta
+      name="twitter:description"
+      content="A Netflix-style interactive portfolio. Pick a profile and see a different side of the story."
+    />
+    <meta
+      name="twitter:image"
+      content="https://dinchu.com/assets/images/og-image.jpg"
+    />
+
+    <!-- Foundation -->
+    <link rel="stylesheet" href="./shared/layout.css" />
+
+    <!-- Component styles -->
+    <link rel="stylesheet" href="./components/navbar/navbar.css" />
+    <link rel="stylesheet" href="./components/hero/hero.css" />
+    <link rel="stylesheet" href="./components/row/row.css" />
+    <link rel="stylesheet" href="./components/card/card.css" />
+    <link rel="stylesheet" href="./components/modal/modal.css" />
+    <link rel="stylesheet" href="./components/footer/footer.css" />
+  </head>
+  <body>
+    <!-- Real, visible markup — injected by loader.js -->
+    <div id="navbar"></div>
+    <div id="hero-container"></div>
+
+    <!-- Rows get built and appended here at runtime by profile.js -->
+    <main id="rows"></main>
+
+    <div id="footer-container"></div>
+
+    <!--
+    Invisible containers that only exist to hold <template> tags.
+    row.js and card.js clone content out of these — nothing here is
+    ever shown directly.
+  -->
+    <div id="row-template-holder" hidden></div>
+    <div id="card-template-holder" hidden></div>
+    <div id="modal-container"></div>
+
+    <!-- Loader must come first, component scripts next, profile.js (the
+       page controller that calls everything else) always last -->
+    <script src="./shared/loader.js"></script>
+    <script src="./shared/viewed-tracker.js"></script>
+    <script src="./components/navbar/navbar.js"></script>
+    <script src="./components/hero/hero.js"></script>
+    <script src="./components/row/row.js"></script>
+    <script src="./components/card/card.js"></script>
+    <script src="./components/modal/modal.js"></script>
+    <script src="./components/footer/footer.js"></script>
+    <script src="./profile.js"></script>
+  </body>
+</html>

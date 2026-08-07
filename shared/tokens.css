@@ -1,0 +1,66 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   Every component pulls its colors, type, and spacing from here.
+   Change a value once, it updates everywhere. Never hardcode a hex
+   code or px spacing value directly in a component file — reference
+   a token instead.
+   ========================================================================== */
+
+:root {
+  /* ---------- Color: base ---------- */
+  --color-bg: #0a0a0a;             /* page background, darker than Netflix's #141414 */
+  --color-surface: #1f1f1f;        /* cards, panels, modal background */
+  --color-surface-hover: #2a2a2a;  /* card hover state */
+  --color-border: #333333;         /* hairlines, dividers */
+
+  /* ---------- Color: text ---------- */
+  --color-text: #f5f5f1;           /* primary text, off-white not pure white */
+  --color-text-muted: #8c8c8c;     /* metadata, labels, secondary copy */
+  --color-text-faint: #5c5c5c;     /* disabled, timestamps, least important */
+
+  /* ---------- Color: accent ---------- */
+  --color-accent: #d4162c;         /* primary red — CTAs, active states, logo */
+  --color-accent-hover: #f01e37;   /* accent hover, slightly brighter */
+  --color-match: #46d369;          /* "match %" badge green, borrowed Netflix signal */
+
+  /* ---------- Type families ---------- */
+  --font-display: 'Archivo Black', 'Arial Black', sans-serif; /* wordmark, row titles, hero headline */
+  --font-body: 'Inter', -apple-system, sans-serif;             /* paragraphs, nav, buttons */
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;     /* match %, timestamps, data labels */
+
+  /* ---------- Type scale ---------- */
+  --text-xs: 0.75rem;    /* 12px — captions, metadata */
+  --text-sm: 0.875rem;   /* 14px — secondary body */
+  --text-base: 1rem;     /* 16px — body copy */
+  --text-lg: 1.25rem;    /* 20px — card titles */
+  --text-xl: 1.75rem;    /* 28px — section/row titles */
+  --text-2xl: 2.5rem;    /* 40px — hero subheading */
+  --text-3xl: 4rem;      /* 64px — hero headline / wordmark */
+
+  /* ---------- Spacing scale ---------- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+  --space-2xl: 96px;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* ---------- Shadow ---------- */
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-modal: 0 16px 48px rgba(0, 0, 0, 0.7);
+
+  /* ---------- Transition ---------- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ---------- Z-index scale ---------- */
+  --z-navbar: 100;
+  --z-modal: 200;
+  --z-chatbot: 300; /* stays above everything, including modals */
+}

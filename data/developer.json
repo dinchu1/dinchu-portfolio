@@ -1,0 +1,109 @@
+{
+  "hero": {
+    "headline": "Dinchen Lepcha",
+    "subhead": "I automate reporting pipelines that shouldn't exist manually. Apps Script, Groq API, SQL, and a growing Python habit — built to make MIS work faster than it has any right to.",
+    "media": {
+      "type": "video",
+      "src": "assets/videos/developer.mp4"
+    },
+    "primaryCta": {
+      "text": "View GitHub",
+      "href": "https://github.com/dinchu1"
+    },
+    "secondaryCta": {
+      "text": "How This Site Was Built",
+      "href": "#projects"
+    }
+  },
+
+  "rows": [
+    {
+      "id": "professional",
+      "title": "Tech Experience",
+      "cards": [
+        {
+          "id": "exp-magicpin",
+          "title": "Senior Associate, Training & Quality — Magicpin",
+          "image": "/assets/images/cards/magicpin.webp",
+          "blurb": "MIS reporting, dashboard development, and KPI tracking for senior leadership at Samast Technologies (Magicpin).",
+          "detail": "April 2024 – Present. Own end-to-end MIS reporting infrastructure — dashboards, KPI tracking, and automated performance summaries used daily by senior leadership at Samast Technologies (Magicpin)."
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "title": "Tech Stack",
+      "cards": [
+        {
+          "id": "tech-appsscript",
+          "title": "Google Apps Script",
+          "image": "/assets/images/cards/appscript.webp",
+          "blurb": "Automation scripts, scheduled triggers, API integrations, Google Chat webhooks."
+        },
+        {
+          "id": "skill-excel",
+          "title": "Excel & Google Sheets",
+          "image": "/assets/images/cards/Google_Sheets_vs_Excel_hero.jpg",
+          "blurb": "Advanced formulas, pivot tables, dashboard building."
+        },
+        {
+          "id": "tech-sql",
+          "title": "SQL",
+          "image": "/assets/images/cards/sql.jpg",
+          "blurb": "Querying, joins, aggregation for reporting pipelines."
+        },
+        {
+          "id": "tech-python",
+          "title": "Python",
+          "image": "/assets/images/cards/python.svg.webp",
+          "blurb": "Data cleaning and scripting — actively growing this skill."
+        },
+        {
+          "id": "tech-jsvanilla",
+          "title": "Vanilla JS / HTML / CSS",
+          "image": "/assets/images/cards/hcj.png",
+          "blurb": "No-framework builds — this site included. Supabase + Vercel for deployment."
+        }
+      ]
+    },
+    {
+      "id": "projects",
+      "title": "Code & Builds",
+      "cards": [
+        {
+          "id": "proj-report6",
+          "title": "Rongsa Farmstay",
+          "image": "/assets/images/cards/rongsa.jpeg",
+          "blurb": "Live website for a homestay in Darjeeling, built and deployed end-to-end alongside my day job.",
+          "detail": "Designed and built a full booking website for Rongsa Farmstay — an authentic Lepcha-hosted homestay in Sittong, Darjeeling. Includes a homepage, rooms & pricing, gallery, and a WhatsApp-based booking flow, deployed live on GitHub Pages.",
+          "link": "https://dinchu1.github.io/rongsa-farmstay/"
+        },
+        {
+          "id": "proj-quickslip-tech",
+          "title": "QuickSlip — Payroll SaaS",
+          "image": "/assets/images/cards/quickslip.png",
+          "blurb": "Web-based payroll tool for small Indian shop owners. Supabase + Vercel."
+        },
+        {
+          "id": "proj-thissite",
+          "title": "This Site",
+          "image": "/assets/images/cards/portfolio.png",
+          "blurb": "A Netflix-style portfolio — component-based vanilla JS, JSON-driven content, no framework."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Let's Build Something",
+      "cards": [
+        {
+          "id": "contact-github",
+          "title": "GitHub",
+          "image": "/assets/images/cards/github.png",
+          "link": "https://github.com/dinchu1",
+          "match": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dinchu — Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ==========================================
+         TITLE SCREEN
+    ========================================== -->
+    <div id="title-screen">
+      <canvas id="title-stars"></canvas>
+
+      <div class="title-corner tl"></div>
+      <div class="title-corner tr"></div>
+      <div class="title-corner bl"></div>
+      <div class="title-corner br"></div>
+
+      <div id="title-chinese">吞噬星空</div>
+      <div id="title-main">My Portfolio</div>
+      <div id="title-line"></div>
+      <div id="title-tagline">Interactive Portfolio Experience</div>
+      <div id="title-name">Dinchen Lepcha — Trainer</div>
+      <button id="title-enter">Enter my Universe</button>
+      <div id="title-hint">Walk to the glowing orbs to explore</div>
+    </div>
+
+    <button id="back-to-portfolio">← Back to Portfolio</button>
+
+    <!-- ==========================================
+         GAME UI
+    ========================================== -->
+    <div id="game-ui">
+      <div id="controls-hint">
+        W A S D — MOVE &nbsp;|&nbsp; SHIFT — RUN &nbsp;|&nbsp; E — INTERACT<br />
+        <span style="opacity: 0.5; font-size: 11px"
+          >DRAG or TWO-FINGER SWIPE — rotate camera</span
+        >
+      </div>
+      <div id="interact-hint">[ E ] &nbsp; EXPLORE</div>
+
+      <!-- Mobile joystick -->
+      <div id="joystick">
+        <div id="joystick-knob"></div>
+      </div>
+
+      <!-- Mobile interact button -->
+      <button id="mobile-interact">EXPLORE</button>
+    </div>
+
+    <!-- Portfolio Panel -->
+    <div id="portfolio-panel">
+      <div id="panel-card">
+        <div id="panel-accent"></div>
+        <button id="panel-close">✕</button>
+        <div id="panel-section"></div>
+        <div id="panel-title"></div>
+        <div id="panel-divider"></div>
+        <div id="panel-content"></div>
+        <div id="panel-esc">ESC to close</div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="game.js"></script>
+    <script>
+      document.getElementById("title-enter").addEventListener("click", () => {
+        document.getElementById("back-to-portfolio").style.display = "block";
+      });
+
+      document
+        .getElementById("back-to-portfolio")
+        .addEventListener("click", () => {
+          const fade = document.createElement("div");
+          fade.id = "back-to-portfolio-fade";
+          document.body.appendChild(fade);
+          void fade.offsetWidth;
+          fade.style.opacity = "1";
+
+          const profile = sessionStorage.getItem("dinchu_profile") || null;
+          const destination = profile
+            ? `/profile.html?type=${profile}`
+            : "/browse.html";
+
+          setTimeout(() => {
+            window.location.href = destination;
+          }, 500);
+        });
+    </script>
+  </body>
+</html>

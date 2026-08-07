@@ -1,0 +1,20 @@
+<!--
+  Card template. Not rendered directly — row.js clones the
+  <template> below once per item in a row's data and fills it in via
+  card.js's createCard(). Using a <template> tag (not innerHTML
+  string-building) keeps the markup readable and avoids re-parsing
+  HTML on every card.
+-->
+<template id="card-template">
+  <button class="card" type="button">
+    <div class="card__media">
+      <img class="card__image" src="" alt="">
+      <span class="card__match" hidden></span>
+    </div>
+
+    <div class="card__hover-panel">
+      <p class="card__title"></p>
+      <p class="card__blurb"></p>
+    </div>
+  </button>
+</template>

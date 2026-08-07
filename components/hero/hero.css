@@ -1,0 +1,147 @@
+/* ==========================================================================
+   HERO
+   Full-bleed section at the top of every profile page. A scrim
+   (gradient overlay) sits between the background media and the text
+   so headline/subhead stay readable regardless of what's playing
+   behind them.
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 320px; /* floor so it never looks collapsed if content is short */
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+/* ---------- Background media ---------- */
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__media video,
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Fallback used when a profile has no video/image — an animated
+   gradient instead of a broken media element. Class added by hero.js. */
+.hero__media--gradient {
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 60%, var(--color-accent) 150%);
+}
+
+/* ---------- Scrim ---------- */
+/* Two gradients: one for bottom-to-top fade (so hero blends into the
+   row content below), one left-to-right (so text on the left is
+   always legible regardless of media brightness). */
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to top, var(--color-bg) 0%, transparent 40%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, transparent 60%);
+}
+
+/* ---------- Content ---------- */
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin-inline: 0; /* overrides page-shell's auto-centering — hero text should sit left, not centered */
+  padding-top: calc(68px + var(--space-2xl)); /* 68px clears the fixed navbar height */
+  padding-bottom: var(--space-xl); /* breathing room before the hero ends and rows begin */
+}
+
+.hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-match);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-sm);
+}
+
+.hero__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  line-height: 1.05;
+  margin-bottom: var(--space-md);
+}
+
+.hero__subhead {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+  max-width: 52ch;
+}
+
+/* ---------- CTAs ---------- */
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--text-base);
+  transition: background-color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.hero__cta--primary {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.hero__cta--primary:hover {
+  opacity: 0.85;
+}
+
+.hero__cta--secondary {
+  background-color: rgba(140, 140, 140, 0.35);
+  color: var(--color-text);
+}
+
+.hero__cta--secondary:hover {
+  background-color: rgba(140, 140, 140, 0.5);
+}
+
+/* Hide a CTA entirely if hero.js leaves it without an href (profile
+   has only one action, e.g. no resume download for the Adventurer view) */
+.hero__cta:not([href]),
+.hero__cta[href=""] {
+  display: none;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .hero {
+    height: 70vh;
+    align-items: flex-end;
+  }
+
+  .hero__headline {
+    font-size: var(--text-2xl);
+  }
+
+  .hero__subhead {
+    font-size: var(--text-base);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+}

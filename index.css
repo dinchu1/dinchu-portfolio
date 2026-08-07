@@ -1,0 +1,216 @@
+/* ==========================================================================
+   SPLASH SCREEN
+   Entry point. Full-black, centered wordmark, click anywhere to enter.
+   The whole screen is a <button> for accessibility (keyboard/screen
+   reader users can Tab + Enter, not just click).
+   ========================================================================== */
+
+.splash {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  background-color: var(--color-bg);
+  cursor: pointer;
+}
+
+.splash__logo {
+  display: inline-flex;
+  align-items: flex-start;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+  animation: splash-pulse 2.4s ease-in-out infinite;
+  animation-delay: 1.3s; /* waits until the fall-in below has finished */
+}
+
+/* ---------- Per-letter fall-in + floor lines ---------- */
+/* Each letter drops from above with a bounce, lands at a slight tilt,
+   then a short white "floor" line snaps in underneath it — like the
+   letter just impacted and left a mark. Staggered per letter so they
+   fall one after another instead of all at once. */
+
+.letter-col {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  animation: letter-fall 700ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.floor {
+  display: block;
+  height: 3px;
+  width: 80%;
+  margin-top: 6px;
+  background-color: var(--color-text);
+  opacity: 0;
+  transform: scaleX(0);
+  animation: floor-appear 200ms ease forwards;
+}
+
+/* Each letter's own resting tilt/offset (--rot/--offset), used by the
+   keyframe below, plus a staggered animation-delay so they land one
+   at a time. Floor delay = that letter's landing time. */
+.letter--1 {
+  --rot: -4deg;
+  --offset: 2px;
+  animation-delay: 0ms;
+}
+.letter--2 {
+  --rot: 3deg;
+  --offset: -3px;
+  animation-delay: 90ms;
+}
+.letter--3 {
+  --rot: -2deg;
+  --offset: 4px;
+  animation-delay: 180ms;
+}
+.letter--4 {
+  --rot: 4deg;
+  --offset: -2px;
+  animation-delay: 270ms;
+}
+.letter--5 {
+  --rot: -3deg;
+  --offset: 1px;
+  animation-delay: 360ms;
+}
+.letter--6 {
+  --rot: 2deg;
+  --offset: 3px;
+  animation-delay: 450ms;
+}
+
+.floor--1 {
+  animation-delay: 650ms;
+}
+.floor--2 {
+  animation-delay: 740ms;
+}
+.floor--3 {
+  animation-delay: 830ms;
+}
+.floor--4 {
+  animation-delay: 920ms;
+}
+.floor--5 {
+  animation-delay: 1010ms;
+}
+.floor--6 {
+  animation-delay: 1100ms;
+}
+
+@keyframes letter-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(-220px) rotate(0deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(var(--offset)) rotate(var(--rot));
+  }
+}
+
+@keyframes floor-appear {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 0.6;
+    transform: scaleX(1);
+  }
+}
+
+/* ---------- Idle breathing animation ---------- */
+@keyframes splash-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .splash__logo {
+    animation: none;
+  }
+
+  .letter {
+    animation: none;
+    opacity: 1;
+    transform: translateY(var(--offset)) rotate(var(--rot));
+  }
+
+  .floor {
+    animation: none;
+    opacity: 0.6;
+    transform: scaleX(1);
+  }
+}
+/* ==========================================================================
+   CLICK-TO-ENTER ZOOM + BACK-BUTTON REVEAL
+   index.js adds/removes these classes: .splash--zooming (on click),
+   .splash--pre-reveal / .splash--reveal (on bfcache back-navigation).
+   Both target .splash__logo as a whole, so all six letters scale/fade
+   together as one group.
+   ========================================================================== */
+
+@keyframes splash-zoom {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.splash--zooming .splash__logo {
+  animation: splash-zoom 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes splash-reveal {
+  0% {
+    transform: scale(4);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.splash--pre-reveal .splash__logo {
+  transform: scale(4);
+  opacity: 0;
+}
+
+.splash--reveal .splash__logo {
+  animation: splash-reveal 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

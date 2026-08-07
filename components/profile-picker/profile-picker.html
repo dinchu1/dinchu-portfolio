@@ -1,0 +1,33 @@
+<!--
+  Profile picker partial. Lives on browse.html only (not injected via
+  loader.js like navbar — this one's page-specific, so it's fine to
+  paste directly into browse.html, or inject it the same way for
+  consistency. Structure kept identical either way.)
+-->
+<section class="picker">
+  <h1 class="picker__heading">Who's Watching?</h1>
+
+  <div class="picker__tiles">
+
+    <button class="picker__tile" data-profile="recruiter">
+      <span class="picker__avatar picker__avatar--recruiter" aria-hidden="true"></span>
+      <span class="picker__label">Recruiter</span>
+    </button>
+
+    <button class="picker__tile" data-profile="developer">
+      <span class="picker__avatar picker__avatar--developer" aria-hidden="true"></span>
+      <span class="picker__label">Developer</span>
+    </button>
+
+    <button class="picker__tile" data-profile="stalker">
+      <span class="picker__avatar picker__avatar--stalker" aria-hidden="true"></span>
+      <span class="picker__label">Stalker</span>
+    </button>
+
+    <button class="picker__tile" data-profile="adventurer">
+      <span class="picker__avatar picker__avatar--adventurer" aria-hidden="true"></span>
+      <span class="picker__label">Adventurer</span>
+    </button>
+
+  </div>
+</section>

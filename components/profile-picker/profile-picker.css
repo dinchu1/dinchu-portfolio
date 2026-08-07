@@ -1,0 +1,110 @@
+/* ==========================================================================
+   PROFILE PICKER
+   The "Who's Watching?" screen. Centered heading + 4 tiles, each a
+   colored avatar with a hover-scale, matching the reference screenshot.
+   ========================================================================== */
+
+.picker {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xl);
+  text-align: center;
+}
+
+.picker__heading {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 400; /* Archivo Black is heavy enough on its own */
+}
+
+.picker__tiles {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.picker__tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  transition: transform var(--transition-fast);
+}
+
+.picker__tile:hover,
+.picker__tile:focus-visible {
+  transform: scale(1.08);
+}
+
+.picker__tile:hover .picker__avatar,
+.picker__tile:focus-visible .picker__avatar {
+  outline: 3px solid var(--color-text);
+}
+
+/* The avatar outline above is our intentional focus indicator — this
+   suppresses the browser's own default focus ring on the button
+   itself, which was stacking on top of it as a visible double ring. */
+.picker__tile:focus-visible {
+  outline: none;
+}
+
+.picker__avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: var(--radius-md);
+  outline: 3px solid transparent;
+  outline-offset: 2px;
+  transition: outline var(--transition-fast);
+}
+
+/* Per-profile images — fallback background-color shows briefly while
+   the image loads, or if the file path is ever wrong */
+.picker__avatar--recruiter {
+  background-color: #2fb4c9;
+  background-image: url("/assets/images/avatars/recruiter.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.picker__avatar--developer {
+  background-color: #9a9a9a;
+  background-image: url("/assets/images/avatars/dev.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.picker__avatar--stalker {
+  background-color: #d4162c;
+  background-image: url("/assets/images/avatars/stalk.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.picker__avatar--adventurer {
+  background-color: #e8931a;
+  background-image: url("/assets/images/avatars/adv.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.picker__label {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .picker__heading {
+    font-size: var(--text-2xl);
+  }
+
+  .picker__avatar {
+    width: 96px;
+    height: 96px;
+  }
+}

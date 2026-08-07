@@ -1,0 +1,128 @@
+{
+  "hero": {
+    "headline": "Dinchen Lepcha",
+    "subhead": "Senior Associate, Training & Quality at Magicpin — building MIS dashboards and automation for senior leadership, now pivoting into Data Analyst / MIS Analyst roles.",
+    "media": {
+      "type": "video",
+      "src": "/assets/videos/recruiter.mp4"
+    },
+    "primaryCta": {
+      "text": "Download Resume",
+      "href": "/assets/resume/dinchu_cv.pdf"
+    },
+    "secondaryCta": {
+      "text": "Contact Me",
+      "href": "#contact"
+    }
+  },
+
+  "rows": [
+    {
+      "id": "professional",
+      "title": "Experience",
+      "cards": [
+        {
+          "id": "exp-magicpin",
+          "title": "Senior Associate, Training & Quality — Magicpin",
+          "image": "/assets/images/cards/magicpin.webp",
+          "blurb": "MIS reporting, dashboard development, and KPI tracking for senior leadership at Samast Technologies (Magicpin).",
+          "detail": "April 2024 – Present. Own end-to-end MIS reporting infrastructure — dashboards, KPI tracking, and automated performance summaries used daily by senior leadership at Samast Technologies (Magicpin)."
+        },
+        {
+          "id": "exp-ayuvya",
+          "title": "Content Writer (Intern) — Ayuvya Ayurveda",
+          "image": "/assets/images/cards/ayuvya.png",
+          "blurb": "October 2023 – January 2024, 3-month content writing internship.",
+          "detail": "Wrote and edited content for Ayuvya Ayurveda over a 3-month internship before transitioning into the Training & Quality role at Magicpin."
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "title": "Skills",
+      "cards": [
+        {
+          "id": "skill-excel",
+          "title": "Excel & Google Sheets",
+          "image": "/assets/images/cards/Google_Sheets_vs_Excel_hero.jpg",
+          "blurb": "Advanced formulas, pivot tables, power query, dashboard building."
+        },
+        {
+          "id": "skill-appsscript",
+          "title": "Google Apps Script",
+          "image": "/assets/images/cards/appscript.webp",
+          "blurb": "Automation scripts, API integrations, scheduled reporting."
+        },
+        {
+          "id": "skill-sql",
+          "title": "SQL",
+          "image": "/assets/images/cards/sql.jpg",
+          "blurb": "Querying, joins, CTE, windows function, aggregation for reporting pipelines."
+        },
+        {
+          "id": "skill-python",
+          "title": "Python",
+          "image": "/assets/images/cards/python.svg.webp",
+          "blurb": "Data cleaning and scripting, growing skill area."
+        },
+        {
+          "id": "skill-power-bi",
+          "title": "Power BI",
+          "image": "/assets/images/cards/powerbi.webp",
+          "blurb": "Visualization, Dax functions, data cleaning, Data presentation."
+        },
+        {
+          "id": "tech-jsvanilla",
+          "title": "Vanilla JS / HTML / CSS",
+          "image": "/assets/images/cards/hcj.png",
+          "blurb": "No-framework builds — this site included. Supabase + Vercel for deployment."
+        }
+      ]
+    },
+    {
+      "id": "projects",
+      "title": "Projects",
+      "cards": [
+        {
+          "id": "proj-report6",
+          "title": "Rongsa Farmstay",
+          "image": "/assets/images/cards/rongsa.jpeg",
+          "blurb": "Live website for a homestay in Darjeeling, built and deployed end-to-end alongside my day job.",
+          "detail": "Designed and built a full booking website for Rongsa Farmstay — an authentic Lepcha-hosted homestay in Sittong, Darjeeling. Includes a homepage, rooms & pricing, gallery, and a WhatsApp-based booking flow, deployed live on GitHub Pages.",
+          "link": "https://dinchu1.github.io/rongsa-farmstay/"
+        },
+        {
+          "id": "proj-quickslip",
+          "title": "QuickSlip — Payroll SaaS",
+          "image": "/assets/images/cards/quickslip.png",
+          "blurb": "Web-based payroll tool for small Indian shop owners. Supabase + Vercel."
+        },
+        {
+          "id": "proj-finance-dashboard",
+          "title": "Personal Finance Dashboard",
+          "image": "/assets/images/cards/finance.png",
+          "blurb": "Tracks salary, bills, debts, savings, and investments. Chart.js, INR currency."
+        },
+        {
+          "id": "proj-thissite",
+          "title": "This Site",
+          "image": "/assets/images/cards/portfolio.png",
+          "blurb": "A Netflix-style portfolio — component-based vanilla JS, JSON-driven content, no framework."
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "cards": [
+        {
+          "id": "contact-email",
+          "title": "Email",
+          "image": "/assets/images/cards/email.avif",
+          "blurb": "Reach out directly — 'dinchusasonian10@gmail.com' or '8101379235'.",
+          "match": null
+        }
+      ]
+    }
+  ]
+}

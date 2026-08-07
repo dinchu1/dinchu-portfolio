@@ -1,0 +1,134 @@
+/* ==========================================================================
+   NAVBAR
+   Fixed top bar. Transparent-to-solid on scroll is handled in navbar.js
+   by toggling the .navbar--solid class defined below.
+   ========================================================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-navbar);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+  transition: background-color var(--transition-base);
+}
+
+.navbar--solid {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+/* ---------- Logo ---------- */
+
+.navbar__logo {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Links ---------- */
+
+.navbar__links {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.navbar__link {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.navbar__link:hover,
+.navbar__link:focus-visible {
+  color: var(--color-text);
+}
+
+.navbar__link--active {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ---------- Profile avatar + dropdown ---------- */
+
+.navbar__profile {
+  position: relative;
+}
+
+.navbar__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.navbar__avatar-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-surface); /* overridden per-profile by navbar.js */
+}
+
+.navbar__dropdown {
+  position: absolute;
+  top: calc(100% + var(--space-sm));
+  right: 0;
+  min-width: 200px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-sm);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+}
+
+.navbar__dropdown--open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar__dropdown-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  padding: var(--space-xs) var(--space-sm);
+}
+
+.navbar__dropdown-label span {
+  color: var(--color-text);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.navbar__dropdown-item {
+  display: block;
+  font-size: var(--text-sm);
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.navbar__dropdown-item:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .navbar__links {
+    display: none; /* replaced by a hamburger menu in a later pass, out of scope for now */
+  }
+}

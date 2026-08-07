@@ -1,0 +1,116 @@
+{
+  "hero": {
+    "eyebrow": "EXPLORE MODE",
+    "headline": "Dinchen Lepcha",
+    "subhead": "The version of this site with fewer spreadsheets and more of what I actually care about outside work.",
+    "media": {
+      "type": "video",
+      "src": "assets/videos/adventurer.mp4"
+    },
+    "primaryCta": {
+      "text": "Explore",
+      "href": "#skills"
+    },
+    "secondaryCta": null
+  },
+
+  "rows": [
+    {
+      "id": "professional",
+      "title": "Fun Facts",
+      "cards": [
+        {
+          "id": "fact-builder",
+          "title": "I Build Things Nobody Asked For",
+          "image": "/assets/images/cards/nobody_asked.jpg",
+          "blurb": "This entire website is an example. Nobody asked for a Netflix-style portfolio. I made one anyway.",
+          "match": null
+        },
+        {
+          "id": "fact-relentless",
+          "title": "Spreadsheet Person By Day",
+          "image": "/assets/images/cards/spreadsheet.jpg",
+          "blurb": "MIS reporting and dashboards at Magicpin, automated wherever humanly possible.",
+          "match": null
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "title": "Interests",
+      "cards": [
+        {
+          "id": "adv-cars",
+          "title": "Car Market Deep Dives",
+          "image": "/assets/images/cards/cars.jpg",
+          "blurb": "Entry-level hatchbacks to used BMWs and Porsches — I've researched way more of the Indian second-hand car market than my bank balance has any business allowing. Thats when i realised - I have spreadsheets. I do not have the money.",
+          "match": null
+        },
+        {
+          "id": "adv-building",
+          "title": "Building Small Tools",
+          "image": "/assets/images/cards/smalltools.jpg",
+          "blurb": "Payroll apps, finance dashboards, automation scripts — if it saves someone time, I want to build it.",
+          "match": null
+        },
+        {
+          "id": "interest-sideprojects",
+          "title": "Weekend Side Projects",
+          "image": "/assets/images/cards/crochets.png",
+          "blurb": "If I'm not working, I'm probably crocheting",
+          "match": null
+        },
+        {
+          "id": "interest-automation",
+          "title": "Playing the most toxic 5V5 moba",
+          "image": "/assets/images/cards/mlbb.jpeg",
+          "blurb": "'Please fix match making' - dinchu",
+          "match": null
+        }
+      ]
+    },
+    {
+      "id": "projects",
+      "title": "Side Quests",
+      "cards": [
+        {
+          "id": "sq-quickslip",
+          "title": "QuickSlip",
+          "image": "/assets/images/cards/quickslip.png",
+          "blurb": "A payroll SaaS idea for small Indian shop owners, built and shipped just to test the concept.",
+          "match": null
+        },
+        {
+          "id": "proj-report6",
+          "title": "Rongsa Farmstay",
+          "image": "/assets/images/cards/rongsa.jpeg",
+          "blurb": "Live website for a homestay in Darjeeling, built and deployed end-to-end alongside my day job.",
+          "detail": "Designed and built a full booking website for Rongsa Farmstay — an authentic Lepcha-hosted homestay in Sittong, Darjeeling. Includes a homepage, rooms & pricing, gallery, and a WhatsApp-based booking flow, deployed live on GitHub Pages.",
+          "link": "https://dinchu1.github.io/rongsa-farmstay/"
+        },
+        {
+          "id": "proj-spaceuniverse",
+          "title": "A Different Side of Me",
+          "image": "/assets/images/cards/trainer.png",
+          "blurb": "Want to explore a different world of mine?",
+          "detail": "Step into a 3D space universe I built from scratch — walk around, explore, and find out more about who I am outside of spreadsheets.",
+          "match": null,
+          "launchInternal": "/space/index.html"
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Reach Out",
+      "cards": [
+        {
+          "id": "contact-email",
+          "title": "Email",
+          "image": "/assets/images/cards/email.avif",
+          "blurb": "Reach out directly — 'dinchusasonian10@gmail.com' or '8101379235'.",
+          "match": null
+        }
+      ]
+    }
+  ]
+}

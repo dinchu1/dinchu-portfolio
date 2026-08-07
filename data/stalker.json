@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "eyebrow": "JUST BROWSING?",
+    "headline": "Hey, I'm Dinchen",
+    "subhead": "Delhi/Gurgaon-based. I build spreadsheets that think for themselves, tinker with side projects on weekends, and have strong opinions about the Indian car market.",
+    "media": {
+      "type": "video",
+      "src": "assets/videos/stalker.mp4"
+    },
+    "primaryCta": {
+      "text": "Say Hi",
+      "href": "#contact"
+    },
+    "secondaryCta": null
+  },
+
+  "rows": [
+    {
+      "id": "professional",
+      "title": "About Me",
+      "cards": [
+        {
+          "id": "about-work",
+          "title": "What I Actually Do",
+          "image": "/assets/images/cards/what.jpeg",
+          "blurb": "Officially Training & Quality. Actually spend most days building dashboards and automating reports.",
+          "match": null
+        },
+        {
+          "id": "about-location",
+          "title": "Based In",
+          "image": "/assets/images/cards/delhi.png",
+          "blurb": "Delhi / Gurgaon, India.",
+          "match": null
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "title": "Things I'm Into",
+      "cards": [
+        {
+          "id": "adv-cars",
+          "title": "Car Market Deep Dives",
+          "image": "/assets/images/cards/cars.jpg",
+          "blurb": "Entry-level hatchbacks to used BMWs and Porsches — I've researched way more of the Indian second-hand car market than my bank balance has any business allowing. Thats when i realised - I have spreadsheets. I do not have the money.",
+          "match": null
+        },
+        {
+          "id": "interest-sideprojects",
+          "title": "Weekend Side Projects",
+          "image": "/assets/images/cards/crochets.png",
+          "blurb": "If I'm not working, I'm probably crocheting",
+          "match": null
+        },
+        {
+          "id": "interest-automation",
+          "title": "Playing the most toxic 5V5 moba",
+          "image": "/assets/images/cards/mlbb.jpeg",
+          "blurb": "'Please fix match making' - dinchu",
+          "match": null
+        }
+      ]
+    },
+    {
+      "id": "projects",
+      "title": "Personal Projects",
+      "cards": [
+        {
+          "id": "proj-report6",
+          "title": "Rongsa Farmstay",
+          "image": "/assets/images/cards/rongsa.jpeg",
+          "blurb": "Live website for a homestay in Darjeeling, built and deployed end-to-end alongside my day job.",
+          "detail": "Designed and built a full booking website for Rongsa Farmstay — an authentic Lepcha-hosted homestay in Sittong, Darjeeling. Includes a homepage, rooms & pricing, gallery, and a WhatsApp-based booking flow, deployed live on GitHub Pages.",
+          "link": "https://dinchu1.github.io/rongsa-farmstay/"
+        },
+        {
+          "id": "proj-financedash-casual",
+          "title": "Personal Finance Dashboard",
+          "image": "/assets/images/cards/finance.png",
+          "blurb": "Tracks my own salary, bills, and savings. INR, obviously.",
+          "match": null
+        },
+        {
+          "id": "proj-thissite-casual",
+          "title": "This Website",
+          "image": "/assets/images/cards/portfolio.png",
+          "blurb": "Yes, the Netflix thing you're looking at right now. I built it myself.",
+          "match": null
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Say Hi",
+      "cards": [
+        {
+          "id": "contact-email",
+          "title": "Email",
+          "image": "/assets/images/cards/email.avif",
+          "blurb": "Reach out directly — 'dinchusasonian10@gmail.com' or '8101379235'.",
+          "match": null
+        }
+      ]
+    }
+  ]
+}

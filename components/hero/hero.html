@@ -1,0 +1,27 @@
+<!--
+  Hero partial. Sits at the top of every profile page. Unlike navbar,
+  this component doesn't fetch its own content — profile.html (the
+  page controller) reads the profile's data file and calls
+  renderHero(data) with it. Keeps hero.js reusable across all 4
+  profiles instead of hardcoding recruiter/developer/etc. inside it.
+-->
+<section class="hero" id="home">
+
+  <div class="hero__media" id="hero-media">
+    <!-- video, image, or gradient fallback injected here by hero.js -->
+  </div>
+
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <div class="hero__content page-shell">
+    <p class="hero__eyebrow" id="hero-eyebrow"></p>
+    <h1 class="hero__headline" id="hero-headline"></h1>
+    <p class="hero__subhead" id="hero-subhead"></p>
+
+    <div class="hero__actions">
+      <a href="#" class="hero__cta hero__cta--primary" id="hero-cta-primary"></a>
+      <a href="#" class="hero__cta hero__cta--secondary" id="hero-cta-secondary"></a>
+    </div>
+  </div>
+
+</section>

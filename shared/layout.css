@@ -1,0 +1,70 @@
+/* ==========================================================================
+   BASE LAYOUT
+   Structural rules shared by every page: how wide content gets, how
+   sections space themselves out, the horizontal-scroll row grid.
+   This file answers "where do things sit" — tokens.css answers
+   "what do things look like." Keep that split; don't let colors or
+   fonts leak in here.
+   ========================================================================== */
+
+@import url('./reset.css');
+@import url('./tokens.css');
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+/* ---------- Page shell ---------- */
+/* Wraps page content so it doesn't stretch edge-to-edge on wide screens */
+.page-shell {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: var(--space-lg);
+}
+
+/* ---------- Section rhythm ---------- */
+/* Consistent vertical spacing between stacked sections (hero, rows, footer) */
+section + section {
+  margin-top: var(--space-xl);
+}
+
+/* ---------- Row grid ---------- */
+/* Horizontal-scrolling container used by the "row" component for
+   Skills / Experience / Projects etc. Cards inside just need to be
+   flex children — no positioning logic required in card.css itself. */
+.row-track {
+  display: flex;
+  gap: var(--space-md);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding-block: var(--space-sm);
+
+  /* hide scrollbar visually, keep it functional */
+  scrollbar-width: none;
+}
+
+.row-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------- Responsive breakpoints ---------- */
+/* Referenced consistently across components — don't invent new
+   breakpoints per file. */
+@media (max-width: 1024px) {
+  .page-shell {
+    padding-inline: var(--space-md);
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding-inline: var(--space-sm);
+  }
+
+  section + section {
+    margin-top: var(--space-lg);
+  }
+}

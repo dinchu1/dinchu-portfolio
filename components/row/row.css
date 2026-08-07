@@ -1,0 +1,69 @@
+/* ==========================================================================
+   ROW
+   A titled, horizontally-scrolling strip of cards. The scroll track
+   itself (.row-track) is defined in shared/layout.css since it's a
+   structural pattern, not a component-specific style — this file only
+   styles the title and the prev/next scroll buttons.
+   ========================================================================== */
+
+.row__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  margin-bottom: var(--space-md);
+  padding-inline: var(--space-lg);
+}
+
+.row__wrapper {
+  position: relative;
+}
+
+/* ---------- Scroll buttons ---------- */
+/* Overlaid on the track edges, only visible on hover of the row
+   (desktop convenience — mobile just swipes, so these hide there). */
+
+.row__scroll-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-2xl);
+  color: var(--color-text);
+  background: linear-gradient(to right, var(--color-bg), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.row__scroll-btn--next {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg), transparent);
+}
+
+.row__scroll-btn--prev {
+  left: 0;
+}
+
+.row__wrapper:hover .row__scroll-btn {
+  opacity: 1;
+}
+
+.row__scroll-btn:disabled {
+  visibility: hidden; /* fully hide at the start/end of the track */
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .row__title {
+    font-size: var(--text-lg);
+    padding-inline: var(--space-sm);
+  }
+
+  .row__scroll-btn {
+    display: none; /* touch scroll only on mobile */
+  }
+}

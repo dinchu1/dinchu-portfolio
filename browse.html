@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Who's Watching? — Dinchu</title>
+
+    <!-- Foundation (layout.css pulls in reset.css + tokens.css itself) -->
+    <link rel="stylesheet" href="./shared/layout.css" />
+
+    <!-- Component styles -->
+    <link
+      rel="stylesheet"
+      href="./components/profile-picker/profile-picker.css"
+    />
+  </head>
+  <body>
+    <!--
+    TEST-ONLY NOTE:
+    Once loader.js exists, this markup will be injected automatically
+    from profile-picker.html instead of being pasted here directly.
+    Pasting it in for now just to verify things render correctly.
+  -->
+    <section class="picker">
+      <h1 class="picker__heading">Who's Watching?</h1>
+
+      <div class="picker__tiles">
+        <button class="picker__tile" data-profile="recruiter">
+          <span
+            class="picker__avatar picker__avatar--recruiter"
+            aria-hidden="true"
+          ></span>
+          <span class="picker__label">Recruiter</span>
+        </button>
+
+        <button class="picker__tile" data-profile="developer">
+          <span
+            class="picker__avatar picker__avatar--developer"
+            aria-hidden="true"
+          ></span>
+          <span class="picker__label">Developer</span>
+        </button>
+
+        <button class="picker__tile" data-profile="stalker">
+          <span
+            class="picker__avatar picker__avatar--stalker"
+            aria-hidden="true"
+          ></span>
+          <span class="picker__label">Stalker</span>
+        </button>
+
+        <button class="picker__tile" data-profile="adventurer">
+          <span
+            class="picker__avatar picker__avatar--adventurer"
+            aria-hidden="true"
+          ></span>
+          <span class="picker__label">Adventurer</span>
+        </button>
+      </div>
+    </section>
+
+    <script src="./shared/sound.js"></script>
+    <script src="./components/profile-picker/profile-picker.js"></script>
+  </body>
+</html>
