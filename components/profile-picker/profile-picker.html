@@ -4,30 +4,59 @@
   paste directly into browse.html, or inject it the same way for
   consistency. Structure kept identical either way.)
 -->
+
+<!--
+  Rotating "featured" banner, matching real Netflix's profile-select
+  screen. Cycles through all 4 profiles automatically (see
+  browse-hero.js) — background, title, and tagline all swap together
+  in a loop. Currently gradient placeholders per profile color;
+  swap to real images/video later without touching this markup.
+-->
+<section class="browse-hero" id="browse-hero">
+  <div class="browse-hero__bg" id="browse-hero-bg"></div>
+  <div class="browse-hero__scrim"></div>
+
+  <div class="browse-hero__content">
+    <div class="browse-hero__logo">DINCHU</div>
+    <h2 class="browse-hero__title" id="browse-hero-title"></h2>
+    <p class="browse-hero__tagline" id="browse-hero-tagline"></p>
+  </div>
+</section>
+
 <section class="picker">
-  <h1 class="picker__heading">Who's Watching?</h1>
+  <h1 class="picker__heading">Choose a Profile</h1>
 
   <div class="picker__tiles">
-
     <button class="picker__tile" data-profile="recruiter">
-      <span class="picker__avatar picker__avatar--recruiter" aria-hidden="true"></span>
+      <span
+        class="picker__avatar picker__avatar--recruiter"
+        aria-hidden="true"
+      ></span>
       <span class="picker__label">Recruiter</span>
     </button>
 
     <button class="picker__tile" data-profile="developer">
-      <span class="picker__avatar picker__avatar--developer" aria-hidden="true"></span>
+      <span
+        class="picker__avatar picker__avatar--developer"
+        aria-hidden="true"
+      ></span>
       <span class="picker__label">Developer</span>
     </button>
 
     <button class="picker__tile" data-profile="stalker">
-      <span class="picker__avatar picker__avatar--stalker" aria-hidden="true"></span>
+      <span
+        class="picker__avatar picker__avatar--stalker"
+        aria-hidden="true"
+      ></span>
       <span class="picker__label">Stalker</span>
     </button>
 
     <button class="picker__tile" data-profile="adventurer">
-      <span class="picker__avatar picker__avatar--adventurer" aria-hidden="true"></span>
+      <span
+        class="picker__avatar picker__avatar--adventurer"
+        aria-hidden="true"
+      ></span>
       <span class="picker__label">Adventurer</span>
     </button>
-
   </div>
 </section>

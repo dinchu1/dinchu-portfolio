@@ -21,8 +21,22 @@
     from profile-picker.html instead of being pasted here directly.
     Pasting it in for now just to verify things render correctly.
   -->
+
+    <!-- Rotating featured banner, matches real Netflix's profile-select
+       screen. Cycles through all 4 profiles automatically. -->
+    <section class="browse-hero" id="browse-hero">
+      <div class="browse-hero__bg" id="browse-hero-bg"></div>
+      <div class="browse-hero__scrim"></div>
+
+      <div class="browse-hero__content">
+        <div class="browse-hero__logo">DINCHU</div>
+        <h2 class="browse-hero__title" id="browse-hero-title"></h2>
+        <p class="browse-hero__tagline" id="browse-hero-tagline"></p>
+      </div>
+    </section>
+
     <section class="picker">
-      <h1 class="picker__heading">Who's Watching?</h1>
+      <h1 class="picker__heading">Choose a Profile</h1>
 
       <div class="picker__tiles">
         <button class="picker__tile" data-profile="recruiter">
@@ -60,6 +74,7 @@
     </section>
 
     <script src="./shared/sound.js"></script>
+    <script src="./components/profile-picker/browse-hero.js"></script>
     <script src="./components/profile-picker/profile-picker.js"></script>
   </body>
 </html>

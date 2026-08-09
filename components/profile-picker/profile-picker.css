@@ -4,13 +4,116 @@
    colored avatar with a hover-scale, matching the reference screenshot.
    ========================================================================== */
 
+/* Locks the whole page to exactly one viewport height, no scroll —
+   hero banner takes a fixed portion, picker section fills whatever's
+   left. Only applies on browse.html since that's the only page
+   loading this stylesheet. */
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Rotating featured banner ---------- */
+/* Sits above the picker, matches real Netflix's profile-select screen.
+   Background/title/tagline all cycle automatically (see browse-hero.js).
+   Currently gradient placeholders per profile color — swap to real
+   images/video later by editing the --bg-* rules below, nothing else
+   needs to change. */
+
+.browse-hero {
+  position: relative;
+  flex: 0 0 44vh;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.browse-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transition: background 900ms ease;
+}
+
+/* Placeholder gradients, one per profile — swapped via class by
+   browse-hero.js. Replace with background-image/video later. */
+.browse-hero__bg--recruiter {
+  background: radial-gradient(circle at 30% 20%, #2fb4c9 0%, #0a0a0a 70%);
+}
+
+.browse-hero__bg--developer {
+  background: radial-gradient(circle at 30% 20%, #9a9a9a 0%, #0a0a0a 70%);
+}
+
+.browse-hero__bg--stalker {
+  background: radial-gradient(circle at 30% 20%, #d4162c 0%, #0a0a0a 70%);
+}
+
+.browse-hero__bg--adventurer {
+  background: radial-gradient(circle at 30% 20%, #e8931a 0%, #0a0a0a 70%);
+}
+
+.browse-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to top, var(--color-bg) 0%, transparent 55%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, transparent 65%);
+}
+
+.browse-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-xl) var(--space-lg);
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.browse-hero__logo {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+.browse-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  margin-bottom: var(--space-sm);
+  transition: opacity 400ms ease;
+}
+
+.browse-hero__tagline {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  transition: opacity 400ms ease;
+}
+
+/* Brief fade during text swap, timed by browse-hero.js */
+.browse-hero__title--fading,
+.browse-hero__tagline--fading {
+  opacity: 0;
+}
+
+/* ---------- Picker section ---------- */
+
 .picker {
-  min-height: 100vh;
+  flex: 1; /* fills whatever space remains after the hero's fixed height */
+  min-height: 0;
+  padding-block: var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2xl);
+  gap: var(--space-lg);
   text-align: center;
 }
 
@@ -99,12 +202,21 @@
 /* ---------- Responsive ---------- */
 
 @media (max-width: 640px) {
+  .browse-hero {
+    flex-basis: 38vh;
+    min-height: 240px;
+  }
+
+  .browse-hero__title {
+    font-size: var(--text-lg);
+  }
+
   .picker__heading {
     font-size: var(--text-2xl);
   }
 
   .picker__avatar {
-    width: 96px;
-    height: 96px;
+    width: 84px;
+    height: 84px;
   }
 }
